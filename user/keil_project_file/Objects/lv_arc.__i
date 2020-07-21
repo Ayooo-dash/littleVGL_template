@@ -1,0 +1,6 @@
+--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\..\std_periph_driver\inc -I ..\..\startup -I ..\..\gui -I ..\..\gui\lv_examples -I ..\..\gui\lvgl -I ..\..\gui\lvgl_driver --diag_suppress=68  --diag_suppress=111 --diag_suppress=550
+-I.\RTE\_littleVGL
+-I"D:\Keil MDK\Arm packs\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"
+-I"D:\Keil MDK\ARM\CMSIS\Include"
+-D__UVISION_VERSION="529" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER
+-o .\objects\lv_arc.o --omf_browse .\objects\lv_arc.crf --depend .\objects\lv_arc.d "..\..\gui\lvgl\src\lv_objx\lv_arc.c"

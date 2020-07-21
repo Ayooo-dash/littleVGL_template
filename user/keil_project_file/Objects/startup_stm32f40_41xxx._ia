@@ -1,0 +1,6 @@
+--cpu Cortex-M4.fp.sp -g --apcs=interwork --pd "__MICROLIB SETA 1"
+-I.\RTE\_littleVGL
+-I"D:\Keil MDK\Arm packs\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"
+-I"D:\Keil MDK\ARM\CMSIS\Include"
+--pd "__UVISION_VERSION SETA 529" --pd "STM32F407xx SETA 1"
+--list .\listings\startup_stm32f40_41xxx.lst --xref -o .\objects\startup_stm32f40_41xxx.o --depend .\objects\startup_stm32f40_41xxx.d "..\..\startup\startup_stm32f40_41xxx.s"

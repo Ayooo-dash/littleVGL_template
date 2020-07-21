@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/gui",
+                "${workspaceFolder}/gui/lv_examples",
+                "${workspaceFolder}/gui/lvgl",
+                "${workspaceFolder}/gui/lvgl_driver",
+                "${workspaceFolder}/gui_app",
+                "${workspaceFolder}/startup",
+                "${workspaceFolder}/std_periph_driver/inc",
+                "${workspaceFolder}/user/inc"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "STM32F40_41xxx",
+                "USE_STDPERIPH_DRIVER"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
