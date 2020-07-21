@@ -2,20 +2,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "STM32F4 Debug",
+            "name": "STM32F4 ST-Link Debug",
             "cwd": "${workspaceRoot}",
-            "executable": "./build/littleVGL.axf",
-            "request": "launch",
+            "executable": ".\\user\\keil_project_file\\Objects\\littleVGL.axf",
+            "request": "attach",
             "type": "cortex-debug",
-            "servertype": "openocd",
-            "configFiles": [
-                "D:\\OpenOCD\\share\\openocd\\scripts\\interface\\stlink-v2.cfg",
-                "D:\\OpenOCD\\share\\openocd\\scripts\\target\\stm32f4x.cfg"
-            ],
+            "servertype": "stutil",
             "svdFile": "D:\\OpenOCD\\share\\openocd\\STM32F4_svd\\STM32F407.svd",
-            "runToMain": true,
             "device": "STM32F407ZG",
             //"preLaunchTask": "开始编译",
+            "v1": false
         }
     ]
 }

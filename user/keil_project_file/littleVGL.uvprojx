@@ -58,7 +58,7 @@
           <ListingPath>.\Listings\</ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
-          <CreateBatchFile>1</CreateBatchFile>
+          <CreateBatchFile>0</CreateBatchFile>
           <BeforeCompile>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
@@ -338,7 +338,7 @@
               <MiscControls>--diag_suppress=68  --diag_suppress=111 --diag_suppress=550</MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\inc;..\..\std_periph_driver\inc;..\..\startup;..\..\gui;..\..\gui\lv_examples;..\..\gui\lvgl;..\..\gui\lvgl_driver</IncludePath>
+              <IncludePath>..\inc;..\..\std_periph_driver\inc;..\..\startup;..\..\gui;..\..\gui\lv_examples;..\..\gui\lvgl;..\..\gui\lvgl_driver;..\..\gui_app</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -826,6 +826,11 @@
               <FileName>img_bubble_pattern.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\gui\lv_examples\lv_apps\demo\img_bubble_pattern.c</FilePath>
+            </File>
+            <File>
+              <FileName>task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\gui_app\task.c</FilePath>
             </File>
           </Files>
         </Group>

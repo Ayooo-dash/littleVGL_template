@@ -2,12 +2,8 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "开始编译",
-            "command": "make",
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "label": "Clean",
+            "command": "del /Q .\\user\\keil_project_file\\Objects .\\user\\keil_project_file\\Listings",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -19,18 +15,86 @@
             "problemMatcher": []
         },
         {
+            "label": "Build",
             "type": "shell",
-            "label": "重新编译",
-            "command": "make clean && make",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "new",
-                "showReuseMessage": true,
-                "clear": false
+            "command": "py",
+            "args": [
+                "-3",
+                "build.py",
+                "-b",
+                "user\\keil_project_file\\littleVGL.uvprojx"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
             },
-            "problemMatcher": []
+            "problemMatcher": [
+                {
+                    "owner": "c",
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceFolder}/user/keil_peoject_file"
+                    ],
+                    "pattern": {
+                        "regexp": "^(.*)\\((\\d+)\\):\\s+(warning|error):\\s+(.*):\\s+(.*)$",
+                        "file": 1,
+                        "line": 2,
+                        "severity": 3,
+                        "code": 4,
+                        "message": 5
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Rebuild",
+            "type": "shell",
+            "command": "py",
+            "args": [
+                "-3",
+                "build.py",
+                "-r",
+                "user\\keil_project_file\\littleVGL.uvprojx"
+            ],
+            "group": "build",
+            "problemMatcher": [
+                {
+                    "owner": "c",
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceFolder}/user/keil_peoject_file"
+                    ],
+                    "pattern": {
+                        "regexp": "^(.*)\\((\\d+)\\):\\s+(warning|error):\\s+(.*):\\s+(.*)$",
+                        "file": 1,
+                        "line": 2,
+                        "severity": 3,
+                        "code": 4,
+                        "message": 5
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Download",
+            "type": "shell",
+            "command": "py",
+            "args": [
+                "-3",
+                "build.py",
+                "-f",
+                "user\\keil_project_file\\littleVGL.uvprojx"
+            ],
+            "group": "test"
+        },
+        {
+            "label": "Open in keil",
+            "type": "process",
+            "command": "D:\\Keil MDK\\UV4\\UV4.exe",
+            "args": [
+                "user\\keil_project_file\\littleVGL.uvprojx"
+            ],
+            "group": "test"
         }
     ],
     "version": "2.0.0"
