@@ -43,9 +43,12 @@ DEFINES = -D__UVISION_VERSION="529"	\
 		  -DSTM32F40_41xxx \
 		  -DUSE_STDPERIPH_DRIVER
 
-.PHONY: all clean
+.PHONY: all clean build rebuild flash
 
-all: $(BUILD) $(OBJS_DIR) $(LISTINGS) $(S_OBJ) $(C_OBJ)
+all:
+	py -3 build.py -b user\keil_project_file\littleVGL.uvprojx
+
+build: $(BUILD) $(OBJS_DIR) $(LISTINGS) $(S_OBJ) $(C_OBJ)
 	@echo Linking and creating $(TARGET).axf file......
 	@$(ARMLINK) $(CPU) $(S_OBJ) $(C_OBJ) $(LINKFLAGS) $(INFO) $(MAP) -o $(BUILD)\$(TARGET).axf
 	@echo Creating $(TARGET).hex file...
@@ -90,3 +93,9 @@ clean:
 	@echo Deleting *.htm files...
 	@del $(shell where /R .\ *.htm)
 	@echo Done.
+
+rebuild:
+	py -3 build.py -r user\keil_project_file\littleVGL.uvprojx
+
+flash:
+	py -3 build.py -f user\keil_project_file\littleVGL.uvprojx

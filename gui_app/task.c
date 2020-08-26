@@ -13,16 +13,13 @@ typedef struct
 } USER_DATA;
 
 lv_task_t *task1 = NULL; //任务句柄指针
-lv_obj_t *scr;
-lv_obj_t *obj1;
-lv_style_t style1;
 USER_DATA user_data = {
     .name = {"Zongyu Guo"},
     .age = 22}; //user_data为用户自定义参数,数据结构一般为结构体
 
 void event_handler(lv_obj_t *obj, lv_event_t event)
 {
-    if (obj == obj1)
+    if (obj)
     {
         if (event == LV_EVENT_RELEASED) //触摸释放事件
         {
@@ -36,16 +33,6 @@ void event_handler(lv_obj_t *obj, lv_event_t event)
 void task1_cb(lv_task_t *task)
 {
     USER_DATA *dat = (USER_DATA *)(task->user_data); //获取用户的自定义参数
-    scr = lv_scr_act();
-    lv_style_copy(&style1, &lv_style_plain_color);
-    style1.body.main_color = LV_COLOR_BLUE;
-    style1.body.radius = LV_RADIUS_CIRCLE;
-    style1.body.grad_color = LV_COLOR_BLUE;
-    obj1 = lv_btn_create(scr, NULL);
-    lv_obj_set_pos(obj1, 200, 120);
-    lv_obj_set_size(obj1, 80, 80);
-    lv_obj_set_click(obj1, true);
-    lv_obj_set_event_cb(obj1, event_handler);
 
     //打印tick时间(一个tick为1ms)和用户自定义参数
     printf("task1_cb_tick:%d,name:%s,age:%d\r\n", lv_tick_get(), dat->name, dat->age);
